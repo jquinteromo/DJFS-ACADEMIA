@@ -45,12 +45,9 @@ const steps = [
 
 const djs = [
   { name: "DJ Nova", image: "/perfiles_img/ad.png" },
-  { name: "Pulse Harbor", image: "/perfiles_img/ar.png" },
-  { name: "DJ Nova Mix", image: "/perfiles_img/Perfil_jaider_mix.png" },
-  { name: "John Carter", image: "/perfiles_img/jc.png" },
-  { name: "DJ Wren", image: "/perfiles_img/wl.png" },
-  { name: "William Stone", image: "/perfiles_img/williian.png" },
   { name: "DJ North", image: "/perfiles_img/jn.png" },
+  { name: "John Carter", image: "/perfiles_img/jc.png" },
+  { name: "DJ Nova Mix", image: "/perfiles_img/Perfil_jaider_mix.png" },
 ];
 
 /* -------------------------------------------------------------------------- */
