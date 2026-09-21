@@ -335,12 +335,13 @@ export default function HomePage() {
 
             <div
               ref={scrollRef}
-              className="flex cursor-grab snap-x snap-proximity gap-4 overflow-x-auto overflow-y-visible pb-4 select-none scroll-smooth active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
+              className="flex flex-nowrap cursor-grab snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden pb-4 select-none scroll-smooth active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
               style={{
                 touchAction: "pan-y",
                 WebkitOverflowScrolling: "touch",
                 overscrollBehaviorX: "contain",
                 scrollbarWidth: "none",
+                msOverflowStyle: "none",
               }}
             >
               {artistCards.map((artist) => (
