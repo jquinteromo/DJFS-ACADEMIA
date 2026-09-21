@@ -99,10 +99,10 @@ export default function AboutPage() {
               Sobre nosotros
             </p>
             <h1 className="max-w-[560px] text-3xl font-normal uppercase leading-[1.1] tracking-tight md:text-5xl">
-              Música electrónica del Huila para tus eventos
+              Música electrónica para tus eventos
             </h1>
             <p className="mt-6 max-w-[460px] text-sm leading-6 text-white/70">
-              DJFS Producciones reúne remix y mixes de DJs del Huila en un solo
+              DJFS Producciones reúne remix y mixes de artistas en un solo
               lugar. Compra, descarga y disfruta música lista para que tu
               evento sea inolvidable.
             </p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1600px] px-6">
           <div className="grid gap-8 md:grid-cols-[0.4fr_3fr]">
             <SectionIntro eyebrow="Nuestros DJs" title={<>DJs<br />DJFS</>}>
-              Artistas de Isnos, Huila, con lo mejor del crossover.
+              Artistas con lo mejor del crossover y energía constante para la pista.
             </SectionIntro>
 
             <ul className="flex flex-wrap gap-x-6 gap-y-6 md:border-l md:border-white/10 md:pl-6">

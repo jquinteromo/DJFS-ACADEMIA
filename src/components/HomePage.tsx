@@ -397,7 +397,7 @@ export default function HomePage() {
                     </div>
 
                     <p className="mb-3 mt-1 text-[11px] leading-4 text-white/70">
-                      DJ de Isnos Huila Colombia, con lo mejor del crossover.
+                      DJ con un sonido moderno y directo, con lo mejor del crossover.
                     </p>
 
                     <button
