@@ -20,12 +20,9 @@ const LOGO = "/logos/DJFS_PRODUCCIONES_blanco.png";
 
 const djs: Dj[] = [
   { id: 1, name: "DJ Nova", image: "/perfiles_img/ad.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 2, name: "Pulse Harbor", image: "/perfiles_img/ar.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 3, name: "DJ Nova Mix", image: "/perfiles_img/Perfil_jaider_mix.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 4, name: "John Carter", image: "/perfiles_img/jc.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 5, name: "DJ Wren", image: "/perfiles_img/wl.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 6, name: "William Stone", image: "/perfiles_img/williian.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 7, name: "DJ North", image: "/perfiles_img/jn.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
+  { id: 2, name: "DJ North", image: "/perfiles_img/jn.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
+  { id: 3, name: "John Carter", image: "/perfiles_img/jc.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
+  { id: 4, name: "DJ Nova Mix", image: "/perfiles_img/Perfil_jaider_mix.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
 ];
 
 const PROFILE_PATH = "/dj-profile"; // cuando haya un perfil por DJ: `/dj-profile/${dj.id}`
