@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import type { PointerEvent as ReactPointerEvent, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import {
   ArrowDownToLine,
@@ -197,13 +197,6 @@ const secondColumn = "md:border-l md:border-white/10 md:pl-6";
 
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const dragState = useRef<{
-    startX: number;
-    startY: number;
-    startScrollLeft: number;
-    pointerId: number;
-    captured: boolean;
-  } | null>(null);
 
   const scrollArtistCards = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
@@ -213,53 +206,6 @@ export default function HomePage() {
       left: direction === "left" ? -cardWidth : cardWidth,
       behavior: "smooth",
     });
-  };
-
-  // Arrastrar solo aplica al mouse; en pantallas táctiles el scroll es nativo.
-  // Se captura el puntero solo cuando realmente hay arrastre, así los botones
-  // de las tarjetas siguen recibiendo el clic.
-  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "mouse" || !scrollRef.current) return;
-
-    dragState.current = {
-      startX: event.clientX,
-      startY: event.clientY,
-      startScrollLeft: scrollRef.current.scrollLeft,
-      pointerId: event.pointerId,
-      captured: false,
-    };
-  };
-
-  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    const drag = dragState.current;
-    const el = scrollRef.current;
-    if (!drag || !el || event.pointerType !== "mouse") return;
-
-    const dx = event.clientX - drag.startX;
-    const dy = event.clientY - drag.startY;
-
-    if (!drag.captured) {
-      if (Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
-      if (Math.abs(dy) > Math.abs(dx)) {
-        dragState.current = null;
-        return;
-      }
-
-      el.setPointerCapture(drag.pointerId);
-      drag.captured = true;
-    }
-
-    el.scrollLeft = drag.startScrollLeft - dx;
-  };
-
-  const handlePointerUp = () => {
-    const drag = dragState.current;
-    const el = scrollRef.current;
-    dragState.current = null;
-
-    if (drag?.captured && el?.hasPointerCapture(drag.pointerId)) {
-      el.releasePointerCapture(drag.pointerId);
-    }
   };
 
   return (
@@ -394,12 +340,8 @@ export default function HomePage() {
                 touchAction: "pan-y",
                 WebkitOverflowScrolling: "touch",
                 overscrollBehaviorX: "contain",
+                scrollbarWidth: "none",
               }}
-              onPointerDown={handlePointerDown}
-              onPointerMove={handlePointerMove}
-              onPointerUp={handlePointerUp}
-              onPointerLeave={handlePointerUp}
-              onPointerCancel={handlePointerUp}
             >
               {artistCards.map((artist) => (
                 <article
