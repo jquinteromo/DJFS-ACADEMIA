@@ -19,10 +19,10 @@ const DEFAULT_CITY = "City Center, Colombia";
 const LOGO = "/logos/DJFS_PRODUCCIONES_blanco.png";
 
 const djs: Dj[] = [
-  { id: 1, name: "DJ Nova", image: "/perfiles_img/ad.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 2, name: "DJ North", image: "/perfiles_img/jn.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 3, name: "John Carter", image: "/perfiles_img/jc.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
-  { id: 4, name: "DJ Nova Mix", image: "/perfiles_img/Perfil_jaider_mix.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
+  { id: 1, name: "DJ Nova", image: "/perfiles_img/mr.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
+  { id: 2, name: "DJ North", image: "/perfiles_img/sc.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
+  { id: 3, name: "John Carter", image: "/perfiles_img/in.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
+  { id: 4, name: "DJ Nova Mix", image: "/perfiles_img/in.png", city: DEFAULT_CITY, bio: DEFAULT_BIO },
 ];
 
 const PROFILE_PATH = "/dj-profile"; // cuando haya un perfil por DJ: `/dj-profile/${dj.id}`

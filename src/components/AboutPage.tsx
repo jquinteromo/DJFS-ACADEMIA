@@ -44,10 +44,10 @@ const steps = [
 ];
 
 const djs = [
-  { name: "DJ Nova", image: "/perfiles_img/ad.png" },
-  { name: "DJ North", image: "/perfiles_img/jn.png" },
-  { name: "John Carter", image: "/perfiles_img/jc.png" },
-  { name: "DJ Nova Mix", image: "/perfiles_img/Perfil_jaider_mix.png" },
+  { name: "DJ Nova", image: "/perfiles_img/mr.png" },
+  { name: "DJ North", image: "/perfiles_img/sc.png" },
+  { name: "John Carter", image: "/perfiles_img/in.png" },
+  { name: "DJ Nova Mix", image: "/perfiles_img/in.png" },
 ];
 
 /* -------------------------------------------------------------------------- */
