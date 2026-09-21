@@ -25,18 +25,18 @@ type Remix = {
 };
 
 const remixes: Remix[] = [
-  { id: 1, title: "Luna Vibes Torfato", dj: "DJ JAIDER MIX", duration: "5:26", price: 17500, publishedAt: "2026-09-14" },
-  { id: 2, title: "Neon Drift", dj: "DJ JAIDER MIX", duration: "6:12", price: 5000, publishedAt: "2026-09-12" },
-  { id: 3, title: "Night Pulse", dj: "DJ NEVA", duration: "4:09", price: 5000, publishedAt: "2026-09-11" },
-  { id: 4, title: "Remix Shift", dj: "SAMU BEAT", duration: "5:35", price: 8500, publishedAt: "2026-09-09" },
-  { id: 5, title: "Afterglow", dj: "JHON C", duration: "4:48", price: 6500, publishedAt: "2026-09-07" },
-  { id: 6, title: "Night Drive", dj: "DJ WL", duration: "5:10", price: 9000, publishedAt: "2026-09-05" },
-  { id: 7, title: "Rhythm Shift", dj: "WILLIAN", duration: "4:38", price: 7000, publishedAt: "2026-09-03" },
-  { id: 8, title: "Coastal Bounce", dj: "DJ JN", duration: "5:33", price: 5000, publishedAt: "2026-09-01" },
-  { id: 9, title: "Solar Run", dj: "DJ NEVA", duration: "4:57", price: 6000, publishedAt: "2026-08-28" },
-  { id: 10, title: "Midnight Circuit", dj: "SAMU BEAT", duration: "5:48", price: 12000, publishedAt: "2026-08-25" },
-  { id: 11, title: "Deep Groove", dj: "JHON C", duration: "6:30", price: 10000, publishedAt: "2026-08-20" },
-  { id: 12, title: "Velvet Club", dj: "DJ WL", duration: "4:20", price: 5000, publishedAt: "2026-08-15" },
+  { id: 1, title: "Luna Vibes Torfato", dj: "DJ Nova Mix", duration: "5:26", price: 17500, publishedAt: "2026-09-14" },
+  { id: 2, title: "Neon Drift", dj: "DJ Nova Mix", duration: "6:12", price: 5000, publishedAt: "2026-09-12" },
+  { id: 3, title: "Night Pulse", dj: "DJ Nova", duration: "4:09", price: 5000, publishedAt: "2026-09-11" },
+  { id: 4, title: "Remix Shift", dj: "Pulse Harbor", duration: "5:35", price: 8500, publishedAt: "2026-09-09" },
+  { id: 5, title: "Afterglow", dj: "John Carter", duration: "4:48", price: 6500, publishedAt: "2026-09-07" },
+  { id: 6, title: "Night Drive", dj: "DJ Wren", duration: "5:10", price: 9000, publishedAt: "2026-09-05" },
+  { id: 7, title: "Rhythm Shift", dj: "William Stone", duration: "4:38", price: 7000, publishedAt: "2026-09-03" },
+  { id: 8, title: "Coastal Bounce", dj: "DJ North", duration: "5:33", price: 5000, publishedAt: "2026-09-01" },
+  { id: 9, title: "Solar Run", dj: "DJ Nova", duration: "4:57", price: 6000, publishedAt: "2026-08-28" },
+  { id: 10, title: "Midnight Circuit", dj: "Pulse Harbor", duration: "5:48", price: 12000, publishedAt: "2026-08-25" },
+  { id: 11, title: "Deep Groove", dj: "John Carter", duration: "6:30", price: 10000, publishedAt: "2026-08-20" },
+  { id: 12, title: "Velvet Club", dj: "DJ Wren", duration: "4:20", price: 5000, publishedAt: "2026-08-15" },
 ];
 
 const PROFILE_PATH = "/dj-profile"; // cuando haya un perfil por DJ: `/dj-profile/${slug}`

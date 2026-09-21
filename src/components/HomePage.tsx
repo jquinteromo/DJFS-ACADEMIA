@@ -22,34 +22,34 @@ type Track = {
 };
 
 const topCharts: Track[] = [
-  { title: "Rhythm Shift", artist: "Deep Groove", dj: "DJ NEVA", time: "6:30", price: "$9.90" },
-  { title: "Luna Vibe", artist: "Resp Remix", dj: "BIXOKE", time: "5:26", price: "$7.50" },
-  { title: "Remix Shift", artist: "Tech Remix", dj: "DJ NEVA", time: "5:35", price: "$8.20" },
-  { title: "Rhythm Shift", artist: "Deep Remix", dj: "DJ BEAT", time: "4:38", price: "$6.90" },
+  { title: "Rhythm Shift", artist: "Deep Groove", dj: "DJ Nova", time: "6:30", price: "$9.90" },
+  { title: "Luna Vibe", artist: "Resp Remix", dj: "Pulse Harbor", time: "5:26", price: "$7.50" },
+  { title: "Remix Shift", artist: "Tech Remix", dj: "DJ Nova", time: "5:35", price: "$8.20" },
+  { title: "Rhythm Shift", artist: "Deep Remix", dj: "DJ Wren", time: "4:38", price: "$6.90" },
 ];
 
 const latestReleases: Track[] = [
-  { title: "Luna Vibes Torfato", artist: "Resp Remix", dj: "DJ JAIDER MIX", time: "5:26", price: "$17.500" },
-  { title: "Remix Shift", artist: "Tech Remix", dj: "PLG A SIEDE", time: "5:35", price: "$8.20" },
-  { title: "Afterglow", artist: "Velvet Club", dj: "NUILE NEICITE", time: "4:48", price: "$6.40" },
-  { title: "Night Drive", artist: "City Echo", dj: "TUCH PLAYER", time: "5:10", price: "$9.20" },
+  { title: "Luna Vibes Torfato", artist: "Resp Remix", dj: "DJ Nova Mix", time: "5:26", price: "$17.500" },
+  { title: "Remix Shift", artist: "Tech Remix", dj: "Wave Echo", time: "5:35", price: "$8.20" },
+  { title: "Afterglow", artist: "Velvet Club", dj: "North Pulse", time: "4:48", price: "$6.40" },
+  { title: "Night Drive", artist: "City Echo", dj: "James Drift", time: "5:10", price: "$9.20" },
 ];
 
 const latestMixes: Track[] = [
-  { title: "Neon Drift", artist: "Pulse Lab", dj: "DJ NEVA", time: "6:12", price: "Gratis" },
-  { title: "Midnight Circuit", artist: "Nova Echo", dj: "BIXOKE", time: "5:48", price: "Gratis" },
-  { title: "Solar Run", artist: "Milo Frame", dj: "DJ MX", time: "4:57", price: "Gratis" },
-  { title: "Coastal Bounce", artist: "Riviera FM", dj: "PLG A SIEDE", time: "5:33", price: "Gratis" },
+  { title: "Neon Drift", artist: "Pulse Lab", dj: "DJ Nova", time: "6:12", price: "Gratis" },
+  { title: "Midnight Circuit", artist: "Nova Echo", dj: "Pulse Harbor", time: "5:48", price: "Gratis" },
+  { title: "Solar Run", artist: "Milo Frame", dj: "DJ North", time: "4:57", price: "Gratis" },
+  { title: "Coastal Bounce", artist: "Riviera FM", dj: "Wave Echo", time: "5:33", price: "Gratis" },
 ];
 
 const artistCards = [
-  { name: "DJ NEVA", image: "/perfiles_img/ad.png" },
-  { name: "SAMU BEAT", image: "/perfiles_img/ar.png" },
-  { name: "DJ JAIDER MIX", image: "/perfiles_img/Perfil_jaider_mix.png" },
-  { name: "JHON C", image: "/perfiles_img/jc.png" },
-  { name: "DJ WL", image: "/perfiles_img/wl.png" },
-  { name: "WILLIAN", image: "/perfiles_img/williian.png" },
-  { name: "DJ JN", image: "/perfiles_img/jn.png" },
+  { name: "DJ Nova", image: "/perfiles_img/ad.png" },
+  { name: "Pulse Harbor", image: "/perfiles_img/ar.png" },
+  { name: "DJ Nova Mix", image: "/perfiles_img/Perfil_jaider_mix.png" },
+  { name: "John Carter", image: "/perfiles_img/jc.png" },
+  { name: "DJ Wren", image: "/perfiles_img/wl.png" },
+  { name: "William Stone", image: "/perfiles_img/williian.png" },
+  { name: "DJ North", image: "/perfiles_img/jn.png" },
 ];
 
 /* -------------------------------------------------------------------------- */

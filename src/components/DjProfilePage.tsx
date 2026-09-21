@@ -46,9 +46,9 @@ type Draft = {
   fileSize: number | null;
 };
 
-const DEFAULT_AVATAR = "/perfiles_img/Perfil_jaider_mix.png";
+const DEFAULT_AVATAR = "/perfiles_img/";
 const LOGO = "/logos/DJFS_PRODUCCIONES_blanco.png";
-const DEFAULT_DJ = "DJ JAIDER MIX";
+const DEFAULT_DJ = "DJ Nova Mix";
 
 const initialTracks: Track[] = [
   { id: 1, title: "Neon Drift", artist: DEFAULT_DJ, duration: "6:12", price: 5000, type: "remix" },
@@ -198,9 +198,9 @@ function TrackRow({ track, isEditing, isPlaying, onTogglePlay, onEdit, onDelete 
 export default function DjProfilePage() {
   const [profileName, setProfileName] = useState(DEFAULT_DJ);
   const [profileBio, setProfileBio] = useState(
-    "DJ de Isnos, Huila, Colombia, con lo mejor del crossover y un sonido directo a la pista de baile.",
+    "Electronic DJ blending club energy with smooth, high-impact mixes and a direct connection to the dance floor.",
   );
-  const [profileLocation, setProfileLocation] = useState("Isnos, Huila, Colombia");
+  const [profileLocation, setProfileLocation] = useState("City Center, Colombia");
   const [profileImage, setProfileImage] = useState(DEFAULT_AVATAR);
   const [isEditing, setIsEditing] = useState(false);
 
