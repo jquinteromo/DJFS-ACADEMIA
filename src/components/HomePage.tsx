@@ -219,7 +219,7 @@ export default function HomePage() {
   // Se captura el puntero solo cuando realmente hay arrastre, así los botones
   // de las tarjetas siguen recibiendo el clic.
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!scrollRef.current) return;
+    if (event.pointerType !== "mouse" || !scrollRef.current) return;
 
     dragState.current = {
       startX: event.clientX,
@@ -233,7 +233,7 @@ export default function HomePage() {
   const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
     const drag = dragState.current;
     const el = scrollRef.current;
-    if (!drag || !el) return;
+    if (!drag || !el || event.pointerType !== "mouse") return;
 
     const dx = event.clientX - drag.startX;
     const dy = event.clientY - drag.startY;
@@ -389,8 +389,12 @@ export default function HomePage() {
 
             <div
               ref={scrollRef}
-              className="flex cursor-grab touch-pan-y snap-x snap-proximity gap-4 overflow-x-auto overflow-y-visible pb-4 select-none active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
-              style={{ touchAction: "pan-y" }}
+              className="flex cursor-grab snap-x snap-proximity gap-4 overflow-x-auto overflow-y-visible pb-4 select-none scroll-smooth active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
+              style={{
+                touchAction: "pan-y",
+                WebkitOverflowScrolling: "touch",
+                overscrollBehaviorX: "contain",
+              }}
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
