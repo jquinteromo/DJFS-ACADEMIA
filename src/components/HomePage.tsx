@@ -199,6 +199,7 @@ export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const dragState = useRef<{
     startX: number;
+    startY: number;
     startScrollLeft: number;
     pointerId: number;
     captured: boolean;
@@ -218,10 +219,11 @@ export default function HomePage() {
   // Se captura el puntero solo cuando realmente hay arrastre, así los botones
   // de las tarjetas siguen recibiendo el clic.
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "mouse" || !scrollRef.current) return;
+    if (!scrollRef.current) return;
 
     dragState.current = {
       startX: event.clientX,
+      startY: event.clientY,
       startScrollLeft: scrollRef.current.scrollLeft,
       pointerId: event.pointerId,
       captured: false,
@@ -234,9 +236,15 @@ export default function HomePage() {
     if (!drag || !el) return;
 
     const dx = event.clientX - drag.startX;
+    const dy = event.clientY - drag.startY;
 
     if (!drag.captured) {
-      if (Math.abs(dx) < 5) return;
+      if (Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
+      if (Math.abs(dy) > Math.abs(dx)) {
+        dragState.current = null;
+        return;
+      }
+
       el.setPointerCapture(drag.pointerId);
       drag.captured = true;
     }
@@ -382,6 +390,7 @@ export default function HomePage() {
             <div
               ref={scrollRef}
               className="flex cursor-grab touch-pan-y snap-x snap-proximity gap-4 overflow-x-auto overflow-y-visible pb-4 select-none active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
+              style={{ touchAction: "pan-y" }}
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
