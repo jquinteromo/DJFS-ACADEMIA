@@ -381,7 +381,7 @@ export default function HomePage() {
 
             <div
               ref={scrollRef}
-              className="flex cursor-grab touch-pan-x snap-x snap-proximity gap-4 overflow-x-auto pb-4 select-none [scrollbar-width:none] active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
+              className="flex cursor-grab touch-pan-y snap-x snap-proximity gap-4 overflow-x-auto overflow-y-visible pb-4 select-none active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
