@@ -198,20 +198,22 @@ const secondColumn = "md:border-l md:border-white/10 md:pl-6";
 export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
+  // Las flechas (solo pantallas sm en adelante) avanzan exactamente una tarjeta.
+  // En móvil no hay JavaScript de por medio: el desplazamiento es 100 % nativo.
   const scrollArtistCards = (direction: "left" | "right") => {
-  const el = scrollRef.current;
-  if (!el) return;
+    const el = scrollRef.current;
+    if (!el) return;
 
-  const card = el.querySelector<HTMLElement>("article");
-  const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
-  const step = card ? card.offsetWidth + gap : 320;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const card = el.querySelector<HTMLElement>("article");
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+    const step = card ? card.offsetWidth + gap : 320;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  el.scrollBy({
-    left: direction === "left" ? -step : step,
-    behavior: reduceMotion ? "auto" : "smooth",
-  });
-};
+    el.scrollBy({
+      left: direction === "left" ? -step : step,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  };
 
   return (
     <>
@@ -338,16 +340,14 @@ export default function HomePage() {
               <ChevronRight size={18} />
             </button>
 
+            {/*
+              Carrusel 100 % nativo. Importante: NO agregar `touch-action`
+              (ni style={{ touchAction }} ni clases touch-pan-*), porque
+              bloquea un eje del deslizamiento con el dedo.
+            */}
             <div
               ref={scrollRef}
-              className="-mx-6 flex snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-pl-6 px-6 pb-4 select-none [scrollbar-width:none] sm:gap-5 [&::-webkit-scrollbar]:hidden"
-              style={{
-                touchAction: "pan-y",
-                WebkitOverflowScrolling: "touch",
-                overscrollBehaviorX: "contain",
-                scrollbarWidth: "none",
-                msOverflowStyle: "none",
-              }}
+              className="-mx-6 flex snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-pl-6 px-6 pb-4 [scrollbar-width:none] sm:gap-5 [&::-webkit-scrollbar]:hidden"
             >
               {artistCards.map((artist) => (
                 <article
@@ -364,7 +364,6 @@ export default function HomePage() {
                       src={artist.image}
                       alt={artist.name}
                       draggable={false}
-                      onDragStart={(event) => event.preventDefault()}
                       className="relative z-10 h-full w-full object-contain"
                     />
 
