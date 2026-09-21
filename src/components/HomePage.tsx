@@ -199,14 +199,19 @@ export default function HomePage() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const scrollArtistCards = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
+  const el = scrollRef.current;
+  if (!el) return;
 
-    const cardWidth = 320;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -cardWidth : cardWidth,
-      behavior: "smooth",
-    });
-  };
+  const card = el.querySelector<HTMLElement>("article");
+  const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+  const step = card ? card.offsetWidth + gap : 320;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  el.scrollBy({
+    left: direction === "left" ? -step : step,
+    behavior: reduceMotion ? "auto" : "smooth",
+  });
+};
 
   return (
     <>
@@ -335,7 +340,7 @@ export default function HomePage() {
 
             <div
               ref={scrollRef}
-              className="flex flex-nowrap cursor-grab snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden pb-4 select-none scroll-smooth active:cursor-grabbing sm:gap-5 [&::-webkit-scrollbar]:hidden"
+              className="-mx-6 flex snap-x snap-proximity gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-pl-6 px-6 pb-4 select-none [scrollbar-width:none] sm:gap-5 [&::-webkit-scrollbar]:hidden"
               style={{
                 touchAction: "pan-y",
                 WebkitOverflowScrolling: "touch",
